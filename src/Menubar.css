@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
+
 :root {
   --mainColor: #ff4f50;
   --textColor: #333333;
@@ -10,6 +12,7 @@
 
 body {
   background-color: lightgray;
+  font-family: "Manjari", sans-serif;
 }
 
 button {
@@ -34,6 +37,22 @@ ul {
   position: relative;
   transition: var(--trans03);
   overflow: hidden;
+  box-shadow: 0 0 5px lightgray;
+}
+
+.sidebar.close .menubar {
+  width: 90px;
+}
+
+.sidebar .menubar .header {
+  padding-top: 10px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .header {
+  padding-left: 0;
 }
 
 .sidebar .menubar .header .logo {
@@ -72,29 +91,58 @@ ul {
   color: var(--textColor);
   transition: var(--trans03);
   font-size: xx-large;
+  padding-top: 10px;
 }
 
 .sidebar.close .menubar .header .logo .logoText {
   color: transparent;
 }
 
-.sidebar.close .menubar {
-  width: 90px;
+.sidebar .menubar .menuList {
+  display: flex;
+  justify-content: center;
 }
 
-.sidebar .menubar .menuList {
-  color: var(--textColor);
-  font-size: x-large;
+.sidebar .menubar .menuList ul {
+  width: 80%;
 }
 
 .sidebar .menubar .menuList li {
+  font-size: x-large;
+  width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: row;
+  gap: 10px;
+  transition: var(--trans01);
+  border-radius: 20px;
+}
+
+.sidebar .menubar .menuList li:hover {
+  background-color: lightgray;
+}
+
+.sidebar .menubar .menuList li .menuIcon {
+  padding: 16px 0px 10px 10px;
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .menuList li .menuIcon {
+  padding-left: 24px;
+}
+
+.sidebar .menubar .menuList li .menuText {
+  padding-top: 7px;
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .menuList li .menuText {
+  opacity: 0;
 }
 
 .sidebar .toggle {
   position: absolute;
-  top: 30px;
+  top: 53px;
   left: 236.5px;
   height: 30px;
   width: 30px;
@@ -108,6 +156,7 @@ ul {
   align-items: center;
   transition: var(--trans04);
   z-index: 10000;
+  box-shadow: 0 0 5px lightgray;
 }
 
 .sidebar.close .toggle {
