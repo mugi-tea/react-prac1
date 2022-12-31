@@ -20,6 +20,12 @@ button {
   appearance: none;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .sidebar .menubar {
   background-color: white;
   height: 100vh;
@@ -33,17 +39,39 @@ button {
 .sidebar .menubar .header .logo {
   display: flex;
   flex: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 10;
+  transition: var(--trans01);
 }
+
+/*
+.sidebar .menubar .header .logo::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: blue;
+  z-index: -1;
+}
+*/
 
 .sidebar .menubar .header .logo .logoIcon {
   color: var(--mainColor);
   font-size: xx-large;
-  padding: 10px 0 0 19px;
+  padding: 10px 0 0 24px;
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .header .logo .logoIcon {
+  padding-left: 29px;
 }
 
 .sidebar .menubar .header .logo .logoText {
   color: var(--textColor);
   transition: var(--trans03);
+  font-size: xx-large;
 }
 
 .sidebar.close .menubar .header .logo .logoText {
@@ -51,7 +79,17 @@ button {
 }
 
 .sidebar.close .menubar {
-  width: 70px;
+  width: 90px;
+}
+
+.sidebar .menubar .menuList {
+  color: var(--textColor);
+  font-size: x-large;
+}
+
+.sidebar .menubar .menuList li {
+  display: flex;
+  flex-direction: row;
 }
 
 .sidebar .toggle {
@@ -69,9 +107,10 @@ button {
   justify-content: center;
   align-items: center;
   transition: var(--trans04);
+  z-index: 10000;
 }
 
 .sidebar.close .toggle {
-  left: 57px;
+  left: 77px;
   transform: rotate(180deg);
 }

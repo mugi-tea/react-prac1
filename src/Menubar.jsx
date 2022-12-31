@@ -21,10 +21,36 @@ const Menubar = () => {
             <span className="logoIcon">
               <i className="bx bxs-car"></i>
             </span>
-
-            {!toggleActive && <span className="logoText">exciroute</span>}
+            <span className="logoText">exciroute</span>
           </div>
         </div>
+
+        <ul className="menuList">
+          <li>
+            <span className="menuIcon">
+              <i className="bx bxs-home"></i>
+            </span>
+            <span className="menuText">My</span>
+          </li>
+          <li>
+            <span className="menuIcon">
+              <i className="bx bxs-group"></i>
+            </span>
+            <span className="menuText">Others</span>
+          </li>
+          <li>
+            <span className="menuIcon">
+              <i className="bx bxs-pencil"></i>
+            </span>
+            <span className="menuText">作成</span>
+          </li>
+          <li>
+            <span className="menuIcon">
+              <i className="bx bxs-cog"></i>
+            </span>
+            <span className="menuText">設定</span>
+          </li>
+        </ul>
       </div>
       <button className="toggle" onClick={() => classToggle()}>
         <i className="bx bx-chevron-right"></i>
