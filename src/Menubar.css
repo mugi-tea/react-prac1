@@ -16,6 +16,8 @@ body {
 }
 
 button {
+  font-family: "Manjari", sans-serif;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   outline: none;
@@ -30,8 +32,10 @@ ul {
 }
 
 .sidebar .menubar {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  height: 100vh;
+  height: 98vh;
   width: 250px;
   border-radius: 10px;
   position: relative;
@@ -96,48 +100,72 @@ ul {
 
 .sidebar.close .menubar .header .logo .logoText {
   color: transparent;
+  padding-left: 15px;
 }
 
 .sidebar .menubar .menuList {
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar .menubar .menuList ul {
+  padding-left: 25px;
   width: 80%;
+  transition: var(--trans03);
 }
 
-.sidebar .menubar .menuList li {
-  font-size: x-large;
+.sidebar.close .menubar .menuList {
+  padding-left: 20px;
+  width: 58%;
+}
+
+.sidebar .menubar .menuList .menuItem {
+  padding: 14px 10px 7px 15px;
+  border-radius: 30px;
+  display: flex;
+}
+
+.sidebar.close .menubar .menuList .menuItem {
+  padding: 14px 10px 7px 14px;
+}
+
+.sidebar .menubar .menuList .menuItem:hover {
+  background-color: bisque;
+}
+
+.sidebar .menubar .menuList .menuItem button {
+  color: var(--textColor);
   width: 100%;
+  font-size: x-large;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.sidebar .menubar .menuList .menuItem button .menuText {
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .menuList .menuItem button .menuText {
+  opacity: 0;
+  padding-left: 15px;
+}
+
+.sidebar .menubar .footer {
+  margin: auto 0 15px 23px;
+
+  transition: var(--trans01);
+  width: 80%;
+
+  border-radius: 50px;
+}
+
+.sidebar .menubar .footer:hover {
+  background-color: bisque;
+}
+
+.sidebar .menubar .footer .logoutButton {
+  padding: 10px 5px 5px 15px;
+  font-size: x-large;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  gap: 10px;
-  transition: var(--trans01);
-  border-radius: 20px;
-}
-
-.sidebar .menubar .menuList li:hover {
-  background-color: lightgray;
-}
-
-.sidebar .menubar .menuList li .menuIcon {
-  padding: 16px 0px 10px 10px;
-  transition: var(--trans03);
-}
-
-.sidebar.close .menubar .menuList li .menuIcon {
-  padding-left: 24px;
-}
-
-.sidebar .menubar .menuList li .menuText {
-  padding-top: 7px;
-  transition: var(--trans03);
-}
-
-.sidebar.close .menubar .menuList li .menuText {
-  opacity: 0;
+  gap: 7px;
 }
 
 .sidebar .toggle {

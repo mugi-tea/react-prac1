@@ -24,33 +24,47 @@ const Menubar = () => {
             <span className="logoText">exciroute</span>
           </div>
         </div>
-        <div className="menuList">
-          <ul>
-            <li>
+        <ul className="menuList">
+          <li className="menuItem">
+            <button>
               <span className="menuIcon">
                 <i className="bx bxs-home"></i>
               </span>
               <span className="menuText">My</span>
-            </li>
-            <li>
+            </button>
+          </li>
+          <li className="menuItem">
+            <button>
               <span className="menuIcon">
                 <i className="bx bxs-group"></i>
               </span>
               <span className="menuText">Others</span>
-            </li>
-            <li>
+            </button>
+          </li>
+          <li className="menuItem">
+            <button>
               <span className="menuIcon">
                 <i className="bx bxs-pencil"></i>
               </span>
               <span className="menuText">Create</span>
-            </li>
-            <li>
+            </button>
+          </li>
+          <li className="menuItem">
+            <button>
               <span className="menuIcon">
                 <i className="bx bxs-cog"></i>
               </span>
               <span className="menuText">Setting</span>
-            </li>
-          </ul>
+            </button>
+          </li>
+        </ul>
+        <div className="footer">
+          <button className="logoutButton">
+            <span className="logoutIcon">
+              <i class="bx bx-log-out"></i>
+            </span>
+            <span className="logoutText">Logout</span>
+          </button>
         </div>
       </div>
       <button className="toggle" onClick={() => classToggle()}>
