@@ -124,8 +124,25 @@ ul {
   padding: 14px 10px 7px 14px;
 }
 
-.sidebar .menubar .menuList .menuItem:hover {
-  background-color: bisque;
+.sidebar .menubar .menuList .menuItem:nth-child(1).active ~ .indicator {
+  transition: var(--trans02);
+
+  transform: translateY(-208px);
+}
+
+.sidebar .menubar .menuList .menuItem:nth-child(2).active ~ .indicator {
+  transition: var(--trans02);
+  transform: translateY(-156px);
+}
+
+.sidebar .menubar .menuList .menuItem:nth-child(3).active ~ .indicator {
+  transition: var(--trans02);
+  transform: translateY(-104px);
+}
+
+.sidebar .menubar .menuList .menuItem:nth-child(4).active ~ .indicator {
+  transition: var(--trans02);
+  transform: translateY(-52px);
 }
 
 .sidebar .menubar .menuList .menuItem button {
@@ -136,6 +153,12 @@ ul {
   flex-direction: row;
   align-items: center;
   gap: 7px;
+  z-index: 10;
+}
+
+.sidebar .menubar .menuList .menuItem button:hover {
+  transition: var(--trans03);
+  transform: translateY(-4px);
 }
 
 .sidebar .menubar .menuList .menuItem button .menuText {
@@ -149,11 +172,14 @@ ul {
 
 .sidebar .menubar .footer {
   margin: auto 0 15px 23px;
-
-  transition: var(--trans01);
+  transition: var(--trans03);
   width: 80%;
-
   border-radius: 50px;
+}
+
+.sidebar.close .menubar .footer {
+  width: 55%;
+  margin: auto 0 15px 20px;
 }
 
 .sidebar .menubar .footer:hover {
@@ -161,11 +187,25 @@ ul {
 }
 
 .sidebar .menubar .footer .logoutButton {
-  padding: 10px 5px 5px 15px;
+  padding: 13px 5px 5px 15px;
   font-size: x-large;
   display: flex;
   align-items: center;
   gap: 7px;
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .footer .logoutButton {
+  padding: 13px 5px 5px 10px;
+}
+
+.sidebar .menubar .footer .logoutButton .logoutText {
+  transition: var(--trans03);
+}
+
+.sidebar.close .menubar .footer .logoutButton .logoutText {
+  opacity: 0;
+  padding-left: 15px;
 }
 
 .sidebar .toggle {
@@ -190,4 +230,18 @@ ul {
 .sidebar.close .toggle {
   left: 77px;
   transform: rotate(180deg);
+}
+
+.sidebar .menubar .menuList .indicator {
+  border-radius: 200px;
+  height: 51.5px;
+  width: 201.5px;
+  background-color: bisque;
+}
+
+.sidebar.close .menubar .menuList .indicator {
+  width: 51.5px;
+}
+
+@media screen and (max-width: 480px) {
 }

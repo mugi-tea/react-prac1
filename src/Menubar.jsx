@@ -3,14 +3,24 @@ import "./Menubar.css";
 
 const Menubar = () => {
   const [toggleActive, setToggleActive] = useState(true);
-  const [toggleActiveLate, setToggleActiveLate] = useState(true);
 
   const classToggle = () => {
     setToggleActive(!toggleActive);
+  };
+
+  const activeLink = (number) => {
+    const list = document.querySelectorAll(".menuItem");
+    list.forEach((item) => item.classList.remove("active"));
+    const activateItem = document.querySelectorAll(".menuItem")[number];
+    activateItem.classList.add("active");
+
     /*
-    setTimeout(() => {
-      setToggleActiveLate(!toggleActiveLate);
-    }, 500);*/
+    const list = document.querySelectorAll(".menuItem");
+    console.log(list);
+    console.log(list[0]);
+    list.forEach((item) => {
+      item.classList.remove("active");
+    });*/
   };
 
   return (
@@ -25,8 +35,8 @@ const Menubar = () => {
           </div>
         </div>
         <ul className="menuList">
-          <li className="menuItem">
-            <button>
+          <li className="menuItem active">
+            <button onClick={() => activeLink(0)}>
               <span className="menuIcon">
                 <i className="bx bxs-home"></i>
               </span>
@@ -34,7 +44,7 @@ const Menubar = () => {
             </button>
           </li>
           <li className="menuItem">
-            <button>
+            <button onClick={() => activeLink(1)}>
               <span className="menuIcon">
                 <i className="bx bxs-group"></i>
               </span>
@@ -42,7 +52,7 @@ const Menubar = () => {
             </button>
           </li>
           <li className="menuItem">
-            <button>
+            <button onClick={() => activeLink(2)}>
               <span className="menuIcon">
                 <i className="bx bxs-pencil"></i>
               </span>
@@ -50,18 +60,19 @@ const Menubar = () => {
             </button>
           </li>
           <li className="menuItem">
-            <button>
+            <button onClick={() => activeLink(3)}>
               <span className="menuIcon">
                 <i className="bx bxs-cog"></i>
               </span>
               <span className="menuText">Setting</span>
             </button>
           </li>
+          <div className="indicator"></div>
         </ul>
         <div className="footer">
           <button className="logoutButton">
             <span className="logoutIcon">
-              <i class="bx bx-log-out"></i>
+              <i className="bx bx-log-out"></i>
             </span>
             <span className="logoutText">Logout</span>
           </button>
