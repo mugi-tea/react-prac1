@@ -10,9 +10,14 @@ const Menubar = () => {
 
   const activeLink = (number) => {
     const list = document.querySelectorAll(".menuItem");
+    const footerList = document.querySelectorAll(".footerMenuItem");
     list.forEach((item) => item.classList.remove("active"));
+    footerList.forEach((item) => item.classList.remove("active"));
     const activateItem = document.querySelectorAll(".menuItem")[number];
+    const footerActiveItem =
+      document.querySelectorAll(".footerMenuItem")[number];
     activateItem.classList.add("active");
+    footerActiveItem.classList.add("active");
   };
 
   return (

@@ -1,0 +1,39 @@
+:root {
+  --mainColor: #ff4f50;
+  --textColor: #333333;
+  --trans01: all 0.1s ease;
+  --trans02: all 0.2s ease;
+  --trans03: all 0.3s ease;
+  --trans04: all 0.4s ease;
+  --trans05: all 0.5s ease;
+}
+
+.header-sm {
+  height: 0px;
+  background-color: white;
+  transition: var(--trans03);
+  transform: translateY(-200px);
+}
+
+@media screen and (max-width: 480px) {
+  .header-sm {
+    transform: translateY(0px);
+    height: 30px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .header-sm .logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    gap: 10px;
+    padding-top: 2px;
+  }
+
+  .header-sm .logo .logoIcon {
+    color: var(--mainColor);
+  }
+}

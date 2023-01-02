@@ -1,0 +1,141 @@
+:root {
+  --mainColor: #ff4f50;
+  --textColor: #333333;
+  --trans01: all 0.1s ease;
+  --trans02: all 0.2s ease;
+  --trans03: all 0.3s ease;
+  --trans04: all 0.4s ease;
+  --trans05: all 0.5s ease;
+}
+
+.footer-sm {
+  height: 0px;
+  transition: var(--trans03);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-sm {
+    height: 60px;
+    width: 96vw;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    overflow: visible;
+  }
+
+  .footer-sm .footerMenuList {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 4px;
+  }
+
+  .footer-sm .footerMenuList .footerMenuItem {
+    transition: var(--trans01);
+    z-index: 10;
+  }
+
+  .footer-sm
+    .footerMenuList
+    .footerMenuItem:nth-child(1).active
+    ~ .footerIndicator {
+    transition: var(--trans04);
+    transform: translateX(-31vw);
+  }
+
+  .footer-sm
+    .footerMenuList
+    .footerMenuItem:nth-child(2).active
+    ~ .footerIndicator {
+    transition: var(--trans04);
+    transform: translateX(-11vw);
+  }
+
+  .footer-sm
+    .footerMenuList
+    .footerMenuItem:nth-child(3).active
+    ~ .footerIndicator {
+    transition: var(--trans04);
+    transform: translateX(10.5vw);
+  }
+
+  .footer-sm
+    .footerMenuList
+    .footerMenuItem:nth-child(4).active
+    ~ .footerIndicator {
+    transition: var(--trans04);
+    transform: translateX(31.1vw);
+  }
+
+  .footer-sm .footerMenuList .footerMenuItem button {
+    font-size: xx-large;
+    padding-top: 2.5px;
+    transition: var(--trans04);
+  }
+
+  .footer-sm .footerMenuList .footerMenuItem button {
+    transition: var(--trans04);
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-sm .footerMenuList .footerMenuItem.active button i {
+    transform: translateY(-39px);
+    transition: var(--trans04);
+  }
+
+  .footer-sm .footerMenuList .footerMenuItem button .footerMenuItemText {
+    font-size: medium;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--trans04);
+    position: absolute;
+  }
+
+  .footer-sm .footerMenuList .footerMenuItem.active button .footerMenuItemText {
+    opacity: 100;
+    transform: translateY(15px);
+  }
+
+  .footer-sm .footerMenuList .footerIndicator {
+    position: absolute;
+  }
+
+  .footer-sm .footerMenuList .footerIndicator .footerIndicatorMain {
+    height: 50px;
+    width: 50px;
+    background-color: bisque;
+    border: solid 6px white;
+    border-radius: 50px;
+    margin-bottom: 72px;
+    z-index: 5;
+    position: relative;
+  }
+
+  .footer-sm .footerMenuList .footerIndicator .footerIndicatorMain::after {
+    position: absolute;
+    content: "";
+    top: 1.5px;
+    left: -25.5px;
+    background-color: transparent;
+    box-shadow: 1px 10px 0 0 white;
+    border-radius: 0 0 25px 0;
+    height: 25px;
+    width: 25px;
+  }
+  .footer-sm .footerMenuList .footerIndicator .footerIndicatorMain::before {
+    position: absolute;
+    content: "";
+    top: 1.5px;
+    left: 51.5px;
+    background-color: transparent;
+    box-shadow: -1px 10px 0 0 white;
+    border-radius: 0 0 0 25px;
+    height: 25px;
+    width: 25px;
+  }
+}
