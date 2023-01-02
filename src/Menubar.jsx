@@ -13,14 +13,6 @@ const Menubar = () => {
     list.forEach((item) => item.classList.remove("active"));
     const activateItem = document.querySelectorAll(".menuItem")[number];
     activateItem.classList.add("active");
-
-    /*
-    const list = document.querySelectorAll(".menuItem");
-    console.log(list);
-    console.log(list[0]);
-    list.forEach((item) => {
-      item.classList.remove("active");
-    });*/
   };
 
   return (
